@@ -21,13 +21,13 @@ const DashboardPage = () => {
   // ✅ Check auth on mount
   useEffect(() => {
     checkAuth();
-  }, []);
+  }, [checkAuth]);
 
   useEffect(() => {
-    if (!user) {
-      navigate("/");
-    }
-  }, [user]);
+  if (!user) {
+    navigate("/");
+  }
+}, [user, navigate]);
 
   // ✅ Quiz generation
   const generateQuiz = async (

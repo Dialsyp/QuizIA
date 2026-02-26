@@ -25,14 +25,14 @@ const Header: FC<HeaderProps> = ({ user, onLogout }) => {
             >
               Tableau de bord
             </Link>
-            <Link
+            {/* <Link
               to="/profile"
               className={`font-medium transition-colors ${
                 location.pathname === '/profile' ? 'text-purple-600' : 'text-gray-600 hover:text-purple-600'
               }`}
             >
               Profil
-            </Link>
+            </Link> */}
           </nav>
           <div className="flex items-center gap-4">
             <span className="text-gray-600 hidden sm:block">Bienvenue, {user}</span>

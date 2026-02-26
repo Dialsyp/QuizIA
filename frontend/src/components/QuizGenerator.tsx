@@ -11,13 +11,7 @@ const quizTypes = [
   { label: "QCM", value: "qcm" },
   { label: "Choix unique", value: "single_choice" },
   { label: "Vrai / Faux", value: "true_false" },
-  // { label: "Texte libre", value: "text" },
-  // { label: "Sélection multiple", value: "multiple_select" },
-  // { label: "Association", value: "matching" },
-  // { label: "Ordre logique", value: "ordering" },
-  // { label: "Texte à trou", value: "fill_blank" },
-  // { label: "Scénario métier", value: "scenario" },
-  // { label: "Question Code", value: "code_question" },
+
 ];
 const QuizGenerator: FC<QuizGeneratorProps> = ({
   topic,
@@ -103,7 +97,7 @@ const QuizGenerator: FC<QuizGeneratorProps> = ({
           disabled={loading || !topic.trim()}
           className="w-full bg-purple-600 hover:bg-purple-700 disabled:bg-gray-400 text-white font-semibold py-3 rounded-xl transition"
         >
-          {loading ? "Génération en cours..." : "Générer le Quiz 🚀"}
+          {loading ? "Génération en cours..." : "Générer le Quiz"}
         </button>
       </div>
     </div>

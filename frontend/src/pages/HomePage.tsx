@@ -9,7 +9,7 @@ const HomePage = () => {
 
   useEffect(() => {
     checkAuth()
-  }, [])
+  }, [checkAuth])
 
   useEffect(() => {
     if (user) {

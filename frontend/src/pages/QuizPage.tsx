@@ -26,13 +26,13 @@ const QuizPage = () => {
   // ✅ Check auth on mount
   useEffect(() => {
     checkAuth();
-  }, []);
+  }, [checkAuth]);
 
-  useEffect(() => {
-    if (!user) {
-      navigate("/");
-    }
-  }, [user]);
+useEffect(() => {
+  if (!user) {
+    navigate("/");
+  }
+}, [user, navigate]);
 
   if (!Quiz) return null;
   const handleAnswer = (selectedAnswer: string) => {
