@@ -10,20 +10,22 @@ import (
 	_ "github.com/joho/godotenv/autoload"
 
 	"QuizIA/internal/database"
+	ai "QuizIA/internal/ia"
 )
 
 type Server struct {
 	port int
 
 	db database.Service
+	ai ai.Service
 }
 
 func NewServer() *http.Server {
 	port, _ := strconv.Atoi(os.Getenv("PORT"))
 	NewServer := &Server{
 		port: port,
-
 		db: database.New(),
+		ai: ai.New(),
 	}
 
 	// Declare Server config

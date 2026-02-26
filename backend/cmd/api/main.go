@@ -10,6 +10,8 @@ import (
 	"time"
 
 	"QuizIA/internal/server"
+	"QuizIA/internal/oauth"
+	
 )
 
 func gracefulShutdown(apiServer *http.Server, done chan bool) {
@@ -38,6 +40,8 @@ func gracefulShutdown(apiServer *http.Server, done chan bool) {
 }
 
 func main() {
+	
+	oauth.NewAuth()
 
 	server := server.NewServer()
 
