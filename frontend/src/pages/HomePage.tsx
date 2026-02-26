@@ -18,8 +18,7 @@ const HomePage = () => {
   }, [user])
 
   const handleLogin = () => {
-    window.location.href =
-      `${import.meta.env.URL_BACKEND}/auth/google`
+    window.location.replace(`${import.meta.env.VITE_URL_BACKEND}/auth/google`)
   }
 
   return <LandingPage onLogin={handleLogin} />

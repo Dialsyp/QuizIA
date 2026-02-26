@@ -64,7 +64,7 @@ const DashboardPage = () => {
   const handleLogout = async () => {
     logout();
 
-    window.location.href = `${import.meta.env.URL_BACKEND}/logout/google`;
+    window.location.href = `${import.meta.env.VITE_URL_BACKEND}/logout/google`;
   };
 
   if (!user) return null;

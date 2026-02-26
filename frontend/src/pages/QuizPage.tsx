@@ -53,7 +53,7 @@ const QuizPage = () => {
 
   const handleLogout = () => {
     logout();
-    window.location.href = `${import.meta.env.URL_BACKEND}/logout/google`;
+    window.location.href = `${import.meta.env.VITE_URL_BACKEND}/logout/google`;
   };
 
   if (!user || Quiz.questions.length === 0) return null;
