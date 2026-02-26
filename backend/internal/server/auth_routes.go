@@ -5,7 +5,7 @@ import (
 	"log"
 	"net/http"
 	"strings"
-
+	"os"
 	"github.com/gin-gonic/gin"
 	"github.com/markbates/goth/gothic"
 )
@@ -69,7 +69,7 @@ func (s *Server) GetAuthCallbackFunction(c *gin.Context) {
 	log.Printf("User %s authenticated successfully with provider %s", user.Email, user.Provider)
 	log.Printf("Session data: %v", session.Values)
 
-	http.Redirect(c.Writer, c.Request, "http://localhost:5173?user="+user.Email, http.StatusFound)
+	http.Redirect(c.Writer, c.Request, os.Getenv("VITE_URL_FRONTEND"), http.StatusFound)
 	// c.JSON(http.StatusOK, user)
 }
 
@@ -115,7 +115,7 @@ func (s *Server) LogoutProvider(c *gin.Context) {
 		log.Printf("Erreur lors du logout: %v", err)
 	}
 
-	c.Redirect(http.StatusTemporaryRedirect, "http://localhost:5173/")
+	c.Redirect(http.StatusTemporaryRedirect, os.Getenv("VITE_URL_FRONTEND"))
 }
 
 func (s *Server) LoginProvider(c *gin.Context) {
