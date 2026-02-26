@@ -21,7 +21,7 @@ const ProfilePage = () => {
 
   const handleLogout = () => {
     setUser(null)
-    window.location.href = `http://localhost:${import.meta.env.VITE_PORT}/logout/google`
+    window.location.href = `${import.meta.env.URL_BACKEND}/logout/google`
   }
 
   if (!user) return null

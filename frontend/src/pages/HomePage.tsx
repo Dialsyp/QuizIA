@@ -19,7 +19,7 @@ const HomePage = () => {
 
   const handleLogin = () => {
     window.location.href =
-      `http://localhost:${import.meta.env.VITE_PORT}/auth/google`
+      `${import.meta.env.URL_BACKEND}/auth/google`
   }
 
   return <LandingPage onLogin={handleLogin} />

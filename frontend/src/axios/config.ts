@@ -1,7 +1,7 @@
 import axios from "axios"
 
 const axiosInstanceSecure = axios.create({
-  baseURL: `http://localhost:${import.meta.env.VITE_PORT}`,
+  baseURL: `${import.meta.env.URL_BACKEND}`,
   withCredentials: true, // ⭐ IMPORTANT pour les cookies de session
 })
 
