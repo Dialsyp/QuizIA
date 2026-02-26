@@ -30,16 +30,14 @@ func NewAuth(){
     if googleClientID == "" || googleClientSecret == "" {
         log.Fatal("GOOGLE_CLIENT_ID or GOOGLE_SECRET_ID not set in environment")
     }
-    // Clé de 32 octets requise par gorilla/securecookie (AES-256)
-    // FilesystemStore cause "could not find a matching session" avec goth - utiliser CookieStore
-    key := []byte("super-secret-key-12345678901234567890")
+    key := []byte(os.Getenv("COOKIE_SECRET_KEY"))
     store := sessions.NewCookieStore(key)
     store.MaxAge(MaxAge)
 
     store.Options.Path = "/"
     store.Options.HttpOnly = true
-    store.Options.Secure = IsProd
-    store.Options.SameSite = http.SameSiteLaxMode
+    store.Options.SameSite = http.SameSiteNoneMode
+    store.Options.Secure = isProd
 
     gothic.Store = store
 
